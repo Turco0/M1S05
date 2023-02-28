@@ -22,27 +22,26 @@ class Pessoa {
   }
   
   imprimirNome() {setTimeout(function(){
- console.log('Normal', this.nome)}, 100);}
+ h1(this.nome)}, 100);}
  
   imprimirNomeArrow() {
    setTimeout(() => {
-  console.log('Arrow', this.nome)}, 100);
+    h1 (this.nome);
+   }, 100);
    }
   }
 
-  const pessoa = new Pessoa('João');
+const pessoa = new Pessoa('João');
 
-  pessoa.imprimirNome();
-  pessoa.imprimirNomeArrow();
-
+pessoa.imprimirNome();
+pessoa.imprimirNomeArrow();
 
 const par = {
   par: true,
-  print: function(){
-  console.log('Normal', this.par);
-  },
+  print() {h1(this.par)}
+  ,
   printArrow: () => {
-  console.log('Arrow', this.par);
+    h1(this.par);
   }
 }
 
