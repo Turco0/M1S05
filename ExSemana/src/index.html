@@ -4,10 +4,11 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css">
     <title>Document</title>
   </head>
-  <body>
 
+  <body>
     <div>
       <h1>Adicionar filme</h1>
       <input
@@ -23,11 +24,16 @@
         placeholder="duração"
       />
       <input type="text" name="notaInput" id="notaInput" placeholder="nota" />
-      <button id="botao" onclick="
-      console.log(variavelFilmeCadastro)">cadastro</button>
+      <button onclick="" id="botao">cadastro</button>
     </div>
-    
-    <script src="index.js" type="module">
-    </script>
+    <div>
+      <h2>Filmes</h2> <span id="assistidas">assistidas</span> 
+      <br>
+      <input type="search" name="pesquisa" id="pesquisa" placeholder="pesquisa" onsearch="" >
+    </div>
+    <section id="catalogo">
+    </section>
+    <script src="index.js" type="module"></script>
+    <script src="modules/dom.js" type="module"></script>
   </body>
 </html>
