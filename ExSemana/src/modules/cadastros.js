@@ -1,4 +1,3 @@
-import filme from "./filmes.js"
 import { gerarPatioDeCards } from "./dom.js"
 
 let filmes = []
@@ -15,12 +14,10 @@ export function indexPorTitulo(titulo, listaCards=[]){
     return listaCards.findIndex(card => card.titulo == titulo)
 }
 
-export function trueFalse(titulo){
-    var filme = filmes.find(f => f.titulo == titulo)
-    filme.favoritar()    
-    gerarPatioDeCards("filme","catalogo", filmes);
-    console.log(filmes);
-    
+export function trueFalse()
+{   
+    filmes.find(f => f.titulo == titulo).favoritar();
+    return gerarPatioDeCards("filme","catalogo", filmes);
 }
 
 export default filmes;

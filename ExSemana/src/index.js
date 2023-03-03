@@ -1,4 +1,4 @@
-import filmes, { achouFilme, pesquisaCards, trueFalse } from "./modules/cadastros.js";
+import filmes, { achouFilme, pesquisaCards, trueFalse} from "./modules/cadastros.js";
 import filme from "./modules/filmes.js";
 import { clearInput, getInput } from "./modules/inputs.js";
 import { gerarPatioDeCards } from "./modules/dom.js";
@@ -24,8 +24,8 @@ function lerFilme() {
   clearInput("notaInput")
 }
 
-const filme1 = new filme("O Senhor dos Anéis", "120", "10");
-const filme2 = new filme("the godfather", "120", "8");
+let filme1 = new filme("O Senhor dos Aneis", "120", "10");
+let filme2 = new filme("the godfather", "120", "8");
 filmes.push(filme1);
 filmes.push(filme2);
 console.log(filmes);
@@ -41,7 +41,7 @@ function gerarPatioDeCardsPesquisa() {
     if(pesquisaCards(getInput("pesquisa"), filmes).length == 0) {
     alert("Nenhum filme encontrado");
     barraPesquisa.value = "";
-    gerarPatioDeCards("filme","catalogo", filmes);
-}}
-
+    gerarPatioDeCards("filme","catalogo", filmes);    
+}
+}
 gerarPatioDeCards("filme","catalogo", filmes);
