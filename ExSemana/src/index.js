@@ -1,4 +1,4 @@
-import filmes, { achouFilme, pesquisaCards } from "./modules/cadastros.js";
+import filmes, { achouFilme, pesquisaCards, trueFalse } from "./modules/cadastros.js";
 import filme from "./modules/filmes.js";
 import { clearInput, getInput } from "./modules/inputs.js";
 import { gerarPatioDeCards } from "./modules/dom.js";
@@ -30,7 +30,8 @@ filmes.push(filme1);
 filmes.push(filme2);
 console.log(filmes);
 
-gerarPatioDeCards("filme","catalogo", filmes);
+
+
 
 var barraPesquisa = document.querySelector("#pesquisa");
 barraPesquisa.addEventListener("input", gerarPatioDeCardsPesquisa);
@@ -43,7 +44,4 @@ function gerarPatioDeCardsPesquisa() {
     gerarPatioDeCards("filme","catalogo", filmes);
 }}
 
-
-function favNoFav() {
-    
-};
+gerarPatioDeCards("filme","catalogo", filmes);
