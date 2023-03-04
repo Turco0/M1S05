@@ -1,5 +1,4 @@
 import publicacao from "./classes/publicacao.js";
-import { inputPublicacao } from "./modules/input.js";
 
 let mural = []
 
