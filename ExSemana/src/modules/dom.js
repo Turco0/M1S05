@@ -1,4 +1,4 @@
-import filmes, { indexPorTitulo } from "./cadastros.js";
+import filme from "../classes/filmes.js";
 
 export function gerarPatioDeCards(
   classeCard = "",
@@ -6,36 +6,14 @@ export function gerarPatioDeCards(
   listaCards = []
 ) {
   document.getElementById(idPatio).innerHTML = "";
-  listaCards.forEach((card) => {
-    document.getElementById(idPatio).innerHTML += `
-            <div class="${classeCard}">
-            <img src="${favorito(card.favorito)}" id="${
-      card.titulo
-    }" class="icones">
-            <img src="" alt="${card.titulo}">
-            <ul>
-            <li><h2>${card.titulo}</h2></li>
-            <li>${card.duracao}</li>
-            <li>${card.nota}</li>
-        </ul>
-            </div>`;
-
-    var elemento = document.getElementById(card.titulo);
-    elemento.addEventListener("click", () => {
-      filmes.find((f) => f.titulo == `${card.titulo}`).favoritar();
-      if (filmes[indexPorTitulo(`${card.titulo}`, filmes)].favorito) {
-        alert("Favorito");
-      } else {
-        alert("Não favorito");
-      }
-      gerarPatioDeCards("filme", "catalogo", filmes);
-    });
+  listaCards.forEach((f = filme) => {
+    f.cardNoPatio(classeCard, idPatio,listaCards);
   });
-}
-export function favorito(favorito) {
-  if (favorito) {
-    return `./img/favicon.ico`;
-  } else {
-    return `./img/favicon (1).ico`;
+  listaCards.forEach((f = filme) => {
+    document.getElementById(String(f.index(listaCards))).addEventListener("click", function () {
+        listaCards[Number(this.id)].favoritar(listaCards)
+        })
+      
+    });
   }
-}
+

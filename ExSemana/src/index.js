@@ -1,11 +1,20 @@
-import filmes, { achouFilme, pesquisaCards, trueFalse} from "./modules/cadastros.js";
-import filme from "./modules/filmes.js";
+import filmes, { achouFilme, pesquisaCards} from "./modules/cadastros.js";
+import filme from "./classes/filmes.js";
 import { clearInput, getInput } from "./modules/inputs.js";
 import { gerarPatioDeCards } from "./modules/dom.js";
 
 var botao = document.querySelector("#botao");
 
 botao.addEventListener("click", lerFilme);
+
+
+
+
+export function estrela() {
+    var index = this.id
+    filmes[Number(this.id)-1].favoritar()
+}
+
 
 function lerFilme() {
   var titulo = getInput("tituloInput");
@@ -22,6 +31,7 @@ function lerFilme() {
   clearInput("tituloInput")
   clearInput("duracaoInput")
   clearInput("notaInput")
+  gerarPatioDeCards("filme","catalogo", filmes);
 }
 
 let filme1 = new filme("O Senhor dos Aneis", "120", "10");
@@ -45,3 +55,4 @@ function gerarPatioDeCardsPesquisa() {
 }
 }
 gerarPatioDeCards("filme","catalogo", filmes);
+
